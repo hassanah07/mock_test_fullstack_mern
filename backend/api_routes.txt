@@ -1,0 +1,23 @@
+____________________________Admin's portal_________________________
+
+
+____________________________user/visitors portal_________________________
+
+
+
+____________________________mentor's portal_________________________
+
+
+
+____________________________student portal_________________________
+
+************ http://localhost:8000/api/registration ***************
+-> Student Registration
+    http://localhost:8000/api/student/register
+
+-> Student login
+    http://localhost:8000/api/student/login
+
+-> 
+
+

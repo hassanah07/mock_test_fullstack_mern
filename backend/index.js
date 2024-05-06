@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Great! Happy Hacking");
+  console.log(`Great! Happy Hacking ${port}`);
 });
 // Rouote for My Blog
 app.options("/api/blogpost/write", (req, res) => {

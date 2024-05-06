@@ -25,10 +25,10 @@ const Page = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { name, email, mobile, desc };
+    const data = { name, email, mobile, role: desc };
     try {
       let resp = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST}/api/auth/register`,
+        `${process.env.NEXT_PUBLIC_HOST}/api/mentor/register`,
         {
           method: "POST",
           headers: {
@@ -48,9 +48,13 @@ const Page = () => {
         draggable: true,
         progress: undefined
       });
-      setTimeout(() => {
-        router.push("/login");
-      }, 5000);
+      if (serverResponse.status == true) {
+        setTimeout(() => {
+          router.push("/menlogin/login");
+        }, 5000);
+      } else {
+        router.push("/error");
+      }
     } catch (error) {
       toast.error("Internal Sever Error-001", {
         theme: "dark",

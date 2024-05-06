@@ -28,7 +28,7 @@ const Page = () => {
     const data = { name, email, mobile, desc };
     try {
       let resp = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST}/api/auth/register`,
+        `${process.env.NEXT_PUBLIC_HOST}/api/student/register`,
         {
           method: "POST",
           headers: {

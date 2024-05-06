@@ -18,7 +18,7 @@ const Page = () => {
     e.preventDefault();
     const data = { email, profileId };
     let res = await fetch(
-      `${process.env.NEXT_PUBLIC_HOST}/api/auth/resetpassword`,
+      `${process.env.NEXT_PUBLIC_HOST}/api/mentor/resetpassword`,
       {
         method: "POST",
         headers: {

@@ -17,27 +17,31 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { email, profileId };
-    let res = await fetch(
-      `${process.env.NEXT_PUBLIC_HOST}/api/student/resetpassword`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      }
-    );
-    res = await res.json();
-    toast.success(res, {
-      theme: "dark",
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined
-    });
+    try {
+      let res = await fetch(
+        `${process.env.NEXT_PUBLIC_HOST}/api/student/resetpassword`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+      res = await res.json();
+      toast.success(res, {
+        theme: "dark",
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="text-black body-font bg-white dark:bg-black dark:text-white flex items-center justify-center min-h-screen">
